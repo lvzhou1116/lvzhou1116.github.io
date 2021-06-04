@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>毕设开发日志 | 吕宙的博客</title><meta name="author" content="LvZhou"><meta name="copyright" content="LvZhou"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="3.8 : 编写好大致的登录界面，完成登录业务流程，下一步要编写控制台界面。3.9：找到并学习前端模板，控制台界面主体已搭建好，下一步完成登录进入控制台并细化控制台各个页面内容。3.10：实现登陆进入主界面，将user信息存入session实现多页面共享，数据表界面兼容成功，下一步完成数据库查询功能。3.11：设计出工资表，前端页面可从数据库中读取数据，实现工资查询功能。下一步实现工资的修改（添加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="毕设开发日志">
+<meta property="og:url" content="http://example.com/2021/06/04/%E6%AF%95%E8%AE%BE%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/index.html">
+<meta property="og:site_name" content="吕宙的博客">
+<meta property="og:description" content="3.8 : 编写好大致的登录界面，完成登录业务流程，下一步要编写控制台界面。3.9：找到并学习前端模板，控制台界面主体已搭建好，下一步完成登录进入控制台并细化控制台各个页面内容。3.10：实现登陆进入主界面，将user信息存入session实现多页面共享，数据表界面兼容成功，下一步完成数据库查询功能。3.11：设计出工资表，前端页面可从数据库中读取数据，实现工资查询功能。下一步实现工资的修改（添加">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://w.wallhaven.cc/full/p8/wallhaven-p8r2wj.jpg">
+<meta property="article:published_time" content="2021-06-04T06:17:26.000Z">
+<meta property="article:modified_time" content="2021-06-04T06:18:44.312Z">
+<meta property="article:author" content="LvZhou">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://w.wallhaven.cc/full/p8/wallhaven-p8r2wj.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/06/04/%E6%AF%95%E8%AE%BE%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2021-06-04 14:18:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://w.wallhaven.cc/full/83/wallhaven-832xlo.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><header class="post-bg" id="page-header" style="background-image: url(https://w.wallhaven.cc/full/p8/wallhaven-p8r2wj.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">吕宙的博客</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">毕设开发日志</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-06-04T06:17:26.000Z" title="发表于 2021-06-04 14:17:26">2021-06-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-06-04T06:18:44.312Z" title="更新于 2021-06-04 14:18:44">2021-06-04</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>3.8 : 编写好大致的登录界面，完成登录业务流程，下一步要编写控制台界面。<br>3.9：找到并学习前端模板，控制台界面主体已搭建好，下一步完成登录进入控制台并细化控制台各个页面内容。<br>3.10：实现登陆进入主界面，将user信息存入session实现多页面共享，数据表界面兼容成功，下一步完成数据库查询功能。<br>3.11：设计出工资表，前端页面可从数据库中读取数据，实现工资查询功能。下一步实现工资的修改（添加模态框）。<br>3.12：学习datatables插件，修改好表格的样式，为用户信息页面添加“添加用户”按钮，点击后出现模态框。下一步尝试使用Ajax向用户信息表添加记录。<br>3.13：已实现添加用户信息至数据库里，但ajax请求总是会因为404进入error分支，暂不知道原因。下一步解决此问题。<br>3.14：发现ajax进入error分支的原因（控制器方法缺少@ResponseBody注解，会将请求返回给视图控制器）。因为自己能力不足，datatables插件和ajax的适配有问题，所以暂时放弃使用ajax，改用传统MVC页面跳转。实现用户数据的增加和前端刷新展示，并为每一行数据添加了编辑和删除按钮，现在已经可以通过点击按钮获取当前行的id值，之后编写后端逻辑和sql语句即可实现编辑和删除功能。下一步实现编辑和删除操作。</p>
+<p>3.15：员工信息管理的编辑和删除功能已实现，至此，员工信息管理模块已完成。下一步优化薪资管理的页面展示并实现工资单的增删改查，有时间的话研究一下绩效管理。</p>
+<p>3.16：重新规划设计薪资管理的数据表，新建员工出勤表和绩效考核表。下一步完成出勤管理和绩效管理，并将其影响映射到工资单上，以完成薪资管理的所有功能。</p>
+<p>3.17：已完成出勤管理。下一步完成绩效管理，及工资单映射。</p>
+<p>3.25：实现绩效管理的查询和添加，添加绩效指标按钮和页面，实现绩效指标的查询，下一步实现权重的计算。</p>
+<p>3.26：实现绩效的增删改查、指标的编辑、绩效加权的自动计算。下一步设计基础工资表和浮动工资表，并研究如何将多张表整合成一张表。</p>
+<p>3.27：重新设计完出勤表、基础工资表、浮动工资表、工资单。明天完成基础工资、浮动工资的增删改查，并实现考勤表、绩效表、基础工资、浮动工资和工资单的连接。</p>
+<p>3.28：完成基础工资的增删改查。工作较昨天继续。</p>
+<p>3.29：完成并实现考勤表、绩效表、基础工资、浮动工资和工资单的连接。下一步实现应发金额和实发金额的计算，修改绩效表（增加绩效工资）。</p>
+<p>3.30：在考勤管理中完成月初初始化功能，也就是根据员工信息表向考勤信息表中插入初始化的记录。给绩效信息表加入绩效工资。下一步为绩效管理、基础工资管理、浮动工资管理添加月初初始化功能。</p>
+<p>3.31：绩效管理增加月初初始化功能。下一步给基础工资管理、浮动工资管理增加月初初始化功能，处理好连接工资单问题。</p>
+<p>4.3：在工资单页面加入一键初始化按钮，希望能实现对所有表的初始化。</p>
+<p>4.6：将一键初始化按钮放置在index页面下，仅需一键即可初始化出勤表、绩效表、基础工资表、浮动工资表、工资单；解决绩效表和浮动工资之间的连接；实现应发金额和实发金额的服务层计算。明天研究财务分析模块，设计数据表。</p>
+<p>4.15：开始财务管理部分。设计好科目表和记账凭证表，实现了科目表的增删改查。明天实现凭证的界面，实现凭证的增删改查，尤其是凭证的插入和更改。还有账簿管理的数据表设计。</p>
+<p>4.16：优化了记账凭证表的设计，因为其存在例如一借多贷的特殊性，将其拆分成两张表：一张凭证信息表，一张凭证内容表，采用自然连接；实现了凭证的查询；编写好添加界面，用到一次添加多个记录的技巧；可以在前端动态新增一行进行填写。明天优化添加界面的细节，如日期，制单人等等，将添加页面的数据加入凭证信息表和凭证内容表里。</p>
+<p>4.17：第一，完善了添加记账凭证的页面，设计到表格标题和下划线。第二，学习使用了bootstrap的日期选择控件(Datetimepicker)，在矢量图形的显示上我花了大量时间，解决路线如下：Datetimepicker控件的js文件里使用 bootstrap v3 的图形库，所以引入 bootstrap v3 的fonts文件夹（尤其要注意路径问题，要和bootstrap.css里的font相符，即与css文件夹并列），再引入bootstrap.css中的部分代码即可使用。明天继续设计添加记账凭证的页面，增加制单人等信息，争取搞定添加功能。</p>
+<p>4.18：将“摘要”字段从凭证信息表中移入凭证内容表，主要是因为一张凭证可以有多条摘要。完成新建凭证页面的金额合计前端功能，主要通过js代码。明天完成科目代码和科目名称的联想。</p>
+<p>4.19：完善新建凭证页面时发现，凭证信息表中需要加入会计主管、记账、审核等字段，我进行了添加。由于有审核的缘故，无需完成科目代码和科目名称的联想，而且这个比较麻烦(无奈笑)。实现了凭证管理的所有功能，包括添加、新建、修改、删除。以后完善一下细节即可（有些input框需要设置为只读）。下一步对账簿管理进行初步操作。</p>
+<p>4.20：研究账簿管理，发现一共要维护四张数据表：存款现金日记账、银行存款日记账、总分类账、明细分类账。已经设计好存款现金数据表，就是单纯的一条条记录。明天设计银行存款日记账、总分类账以及明细分类账。</p>
+<p>4.21：优化了前端导航栏的布局和显示，使用了多样的Font Awesome字体图标，更加美观了。设计好银行存款日记账、总分类账以及明细分类账这三张数据表。明天编码实现4张前端页面和它们的增删改查。</p>
+<p>4.22：已完成库存现金日记账的查看，明天继续，添加和修改需要依赖用户。</p>
+<p>4.23：完成库存现金日记账、银行存款日记账、总分类账、明细分类账的增删改查。至此，账簿管理已完成。明天熟悉报表管理的流程并设计数据表。</p>
+<p>4.24：感觉比较疲倦，今日休息。准备明天设计报表管理中的资产负债表和利润表，其中，资产负债表被拆分成资产表和负债表。</p>
+<p>4.25：搞定资产负债表的设计，完善所有页面左侧的导航栏，设计好资产负债表的查询界面以及完成页面上的合计自动计算功能。明天设计添加资产负债表的页面并完成增加功能，尽力完成资产负债表的所有功能。明天编辑zcfzb_add.jsp，从日期input框开始。</p>
+<p>4.26：完成资产负债表的添加页面（一个页面提交两个表单，ajax提示）和逻辑功能。完成资产负债表的所有增删改查功能。明天解决利润表。</p>
+<p>4.27：完成利润表的查询，但bigdecimal数据显示不出来，明天解决。</p>
+<p>4.28：完成利润表的所有功能。申请到学院的服务器。</p>
+<p>4.29：完成退出登录功能，其中@SessionAttribute会重复填充session中的信息，导致session.invalidate后数据会被重新写入，使用sessionStatus.setComplete()解决问题。使用远程桌面连接进入Centos服务器。</p>
+<p>4.30：开始服务器配置。</p>
+<p><strong>第一点</strong>，安装jdk。下载jdk-8u11-linux-x64.tar.gz，用Xftp传输到服务器上并解压。</p>
+<p>配置环境变量步骤：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/luzhou/</span><br><span class="line"></span><br><span class="line">vim .bashrc</span><br></pre></td></tr></table></figure>
+
+<p>添加以下配置</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/home/luzhou/java/jdk1.8</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</span><br></pre></td></tr></table></figure>
+
+<p>立即生效</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /home/luzhou/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>测试是否安装成功</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<p><strong>第二点</strong>，安装tomcat。下载apache-tomcat-9.0.45.tar.gz，用Xftp传输到服务器上并解压。</p>
+<p>开放8080端口</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8080/tcp --permanent</span><br></pre></td></tr></table></figure>
+
+<p>重启防火墙</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload </span><br></pre></td></tr></table></figure>
+
+<p>在bin文件夹下启动Tomcat</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./startup.sh</span><br></pre></td></tr></table></figure>
+
+<p>用浏览器访问localhost:8080成功</p>
+<p><strong>第三点</strong>，安装mysql。下载mysql-8.0.24-1.el7.x86_64.rpm-bundle，用Xftp传输到服务器上。</p>
+<p>卸载系统自带的mariadb</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep mariadb (查看当前系统是否有mariadb安装包)</span><br><span class="line">rpm -e mariadb-libs-5.5.56-2.el7.x86_64 --nodeps(卸载mariadb)</span><br><span class="line">rpm -qa | grep mariadb(再次查看mariadb是否已经卸载)</span><br></pre></td></tr></table></figure>
+
+<p>解压mysql8.0压缩包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf mysql-8.0.22-1.el7.x86_64.rpm-bundle.tar </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>安装四个必须的包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh mysql-community-common-8.0.22-1.el7.x86_64.rpm --nodeps --force (安装 common 包)</span><br><span class="line"></span><br><span class="line">rpm -ivh mysql-community-libs-8.0.22-1.el7.x86_64.rpm --nodeps --force (安装 libs 包)</span><br><span class="line"></span><br><span class="line">rpm -ivh mysql-community-client-8.0.22-1.el7.x86_64.rpm --nodeps --force (安装 client 包)</span><br><span class="line"></span><br><span class="line">rpm -ivh mysql-community-server-8.0.22-1.el7.x86_64.rpm --nodeps --force (安装 server 包)</span><br><span class="line"></span><br><span class="line">rpm -qa | grep mysql(查看mysql的安装包)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>对数据库进行初始化配置</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize</span><br><span class="line"></span><br><span class="line">chown mysql:mysql /var/lib/mysql -R</span><br><span class="line"></span><br><span class="line">systemctl start mysqld.service</span><br><span class="line">(此命令会报错：Job <span class="keyword">for</span> mysqld.service failed because the control process exited with error code. See <span class="string">&quot;systemctl status mysqld.service&quot;</span> and <span class="string">&quot;journalctl -xe&quot;</span> <span class="keyword">for</span> details.</span><br><span class="line">解决方法：输入命令 cat /var/<span class="built_in">log</span>/mysqld.log 查看具体错误日志，发现日志提示：Unsupported redo <span class="built_in">log</span> format (0). The redo <span class="built_in">log</span> was created before MySQL 5.7.9. 在/var/lib/mysql下新建一个data文件夹，然后输入命令 vim /etc/my.cnf 编辑my.cnf中的内容，将datadir的路径修改成：datadir=/var/lib/mysql/data ，保存后启动mysql服务器成功。)</span><br><span class="line"></span><br><span class="line">systemctl <span class="built_in">enable</span> mysqld</span><br><span class="line"></span><br><span class="line">cat /var/<span class="built_in">log</span>/mysqld.log | grep password (查看数据库的密码)</span><br><span class="line"></span><br><span class="line">mysql -uroot -p (敲回车键进入数据库登陆界面)</span><br><span class="line"></span><br><span class="line">mysql &gt; ALTER USER <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED WITH mysql_native_password BY <span class="string">&#x27;Lz_981116&#x27;</span>; （修改root用户的密码为Lz_981116）</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过以下命令，进行远程访问的授权</span></span><br><span class="line">mysql &gt; create user <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span> identified with mysql_native_password by <span class="string">&#x27;Lz_981116&#x27;</span>;</span><br><span class="line"></span><br><span class="line">mysql &gt; grant all privileges on *.* to <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span> with grant option;</span><br><span class="line"></span><br><span class="line">mysql &gt; flush privileges;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改加密规则，MySql8.0 版本 和 5.0 的加密规则不一样，而现在的可视化工具只支持旧的加密方式。</span></span><br><span class="line"></span><br><span class="line">mysql &gt; ALTER USER <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED BY <span class="string">&#x27;Lz_981116&#x27;</span> PASSWORD EXPIRE NEVER;</span><br><span class="line"></span><br><span class="line">mysql &gt; flush privileges;</span><br><span class="line"></span><br><span class="line">mysql &gt; select version();   （查看MySQL的版本）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>以后登录输入：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -pLz_981116</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>退出：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql &gt; <span class="built_in">exit</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>5.1：navcat远程连接mysql。</p>
+<p>刚开始用navicat连接服务器的3306端口失败，报错：mysql 2003 - Can’t connect to MySQL server on ‘ ‘(10038)，应该是防火墙问题。</p>
+<p>CentOS默认使用firewall作为防火墙，所以输入以下命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state (查看防火墙状态，显示running)</span><br><span class="line"></span><br><span class="line">firewall-cmd --zone=public --add-port=3306/tcp --permanent (开启3306端口)</span><br><span class="line"></span><br><span class="line">firewall_cmd --reload (重启防火墙)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>经过以上操作后，navicat远程连接成功！</p>
+<p>此外，细化了登录逻辑，利用ajax实现登录失败提示。给控制台页面增加了库存现金余额、银行存款余额、未审核凭证、员工人数这四个从数据库中搜索出的数据。已理清index页面的思路，在login页面点击登录后，若成功，跳转至控制器”/initIndex”,控制器会返回上述四条数据并展示在index页面上，此时，待页面加载完成，自动执行ajax请求，访问”/getLrInfo”和”/getZcInfo”取得图表所需数据（以json的形式）。现在的难点是sql按月统计语句，明天争取搞完。</p>
+<p>5.2：设计出sql语句：(实现按月统计资产表的期末数)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span>(qms) <span class="keyword">from</span> t_zc <span class="keyword">where</span> <span class="built_in">date</span> <span class="keyword">like</span> <span class="keyword">concat</span>(<span class="string">&#x27;%&#x27;</span>,<span class="comment">#&#123;year&#125;,&#x27;%&#x27;) group by date;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>设计出sql语句：(实现按月计算本月的净利润)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> bys <span class="keyword">from</span> t_lr <span class="keyword">where</span> <span class="built_in">date</span> <span class="keyword">like</span> <span class="keyword">concat</span>(<span class="string">&#x27;%&#x27;</span>,<span class="comment">#&#123;year&#125;,&#x27;%&#x27;) and xm = &#x27;四、净利润&#x27; group by date ;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>实现控制台(首页)的大体数据展示，包括：库存现金余额、银行存款余额、未审核凭证、员工人数、资产概况、利润走势。其中的资产概况和利润走势用到了Chart.js库，需要json类型的数据绘制图表，所以用ajax请求向后台请求数据并返回。</p>
+<p>后续任务整理如下，争取明天完成：</p>
+<p><u>1.实现导出Excel（工资单；资产负债表 和 利润表）</u><br><u>2.admin登录</u><br><u>2.注册功能</u><br><u>3.模态框某些input需要readonly</u><br><u>4.没登录时拦截请求</u></p>
+<p>5.3：实现导出Excel功能（资产表、负债表、利润表 和 工资单）。</p>
+<p>为了区分普通user和admin，新添type字段，jsp可通过el表达式取得session中的user.type，进而对不同用户给出不同的操作权限。如果${user.type}等于admin，用js脚本修改readonly属性开放所有数据的修改。</p>
+<p>实现用户注册功能。</p>
+<p>实现admin账号管理功能(忘记密码功能)。</p>
+<p>实现拦截器功能，未登录状态下对控制器的请求会被拦截，重定向至登录页面。</p>
+<p>成功部署至服务器。（过程如下：用navicat进行数据库转移，把本地的数据库传输给服务器；修改项目配置文件spring.xml中的数据库连接池参数，修改成服务器数据库上的密码；linux上的mysql区分大小写，需要将sql语句中字母大写的表名改成小写；用Maven的clean和package命令将项目打成war包，并放置在webapps文件夹下，运行着的tomcat会自动解压；遇到group by语句不能使用的问题，在linux上进入mysql用命令修改sql_mode参数解决。）</p>
+<p>至此，毕业设计已完成，下面将开始毕设论文的撰写。</p>
+<p>5.28：又回来了嗷，开始进行细节优化。</p>
+<p>1.给每个管理模块增加“删除”模态框，这样点击“删除”后不会立即执行删除，给用户容错的机会。其中，工资单模块直接取消删除功能。</p>
+<p>2.解决mysql数据库8小时自动断开的问题，方法是设置c3p0数据库连接池的最大有效时间小于8小时即可。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">LvZhou</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/06/04/%E6%AF%95%E8%AE%BE%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/">http://example.com/2021/06/04/%E6%AF%95%E8%AE%BE%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">吕宙的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://w.wallhaven.cc/full/p8/wallhaven-p8r2wj.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/12/11/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1Day9/"><img class="next-cover" src="https://w.wallhaven.cc/full/p8/wallhaven-p8r2wj.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">毕业设计Day9</div></div></a></div></nav></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By LvZhou</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
